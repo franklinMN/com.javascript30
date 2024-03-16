@@ -110,3 +110,18 @@ body{
     z-index: 4;
 }
 
+.heart{
+    width: 5%;
+    height: auto;
+
+    /* position: absolute;
+    top: 30%;
+    left: 10%;
+    transform: rotate(-45deg); */
+
+    opacity: 1;
+
+    z-index: 9;
+    
+}
+
