@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    --body-bg-image: url(images/bg-dark.jpg);
+    --body-bg-tint : linear-gradient( rgba(0,0,0,0.5), rgba(0,0,0,.5) );
+
+    --clock-border-color: white;
+    --clock-bg-color: rgba(0,0,135,0.5);
+
+    --hour-arm-color: rgb(255, 92, 92);
+    --min-arm-color: rgb(135, 135, 255);
+    --sec-arm-color: rgb(126, 255, 126);
+    --arm-color: white;
+
+
+}
+
+body{
+    background-image: var(--body-bg-tint), var(--body-bg-image);
+    background-size:cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.center-position{
+
+    /* positioning */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.clock-container{
+    width: 80%;
+    height: 80%;
+}
+
+.frame{
+
+    border-color: var(--clock-border-color);
+    border-width: 10px;
+    border-radius: 50%;
+    border-style: solid;
+    
+    /* box-shadow: 0px 0px 30px 5px var(--clock-bg-color); */
+
+    background-color: var(--clock-bg-color);
+    background-image: linear-gradient( 120deg, rgba(0,0,0,0.7), var(--clock-bg-color));
+
+    width: 300px;
+    height: 300px;
+}
+
+.arm{
+
+    background-color: var(--arm-color);
+    width: 45%;
+    height: 10px;
+
+    border-radius: 5px;
+
+
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transition: cubic-bezier(0.46,-0.27, 0.53, 1.69) 0.01s;
+    transform-origin: right;
+    
+    
+}
+
+.hour-arm {
+
+    background-color: var(--hour-arm-color);
+    z-index: 1;
+    width: 30%;
+    transform: rotate(90deg);
+}
+
+.min-arm {
+
+    background-color: var(--min-arm-color);
+    z-index: 2;
+    height: 7px;
+    width: 40%;
+    transform: rotate(90deg);
+}
+
+.sec-arm {
+
+    background-color: var(--sec-arm-color);
+    z-index: 3;
+    height: 3px;
+    transform: rotate(90deg);
+}
+
+.holder{
+    width: 10%;
+    height: 10%;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.5);
+    z-index: 4;
+}
+
