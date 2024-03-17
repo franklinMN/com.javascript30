@@ -34,3 +34,16 @@ target_blur.addEventListener("mousemove", blurAction);
 target_colorPicker.addEventListener("mousemove", colorPickerAction);
 
 
+// loading Screen
+
+// Show loading overlay when the page starts loading
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('loading-overlay').style.display = 'flex';
+});
+
+// Hide loading overlay when the page has finished loading
+window.addEventListener('load', function() {
+    document.getElementById('loading-overlay').style.display = 'none';
+});
+
+
