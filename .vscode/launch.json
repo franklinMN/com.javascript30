@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris",
+            "request": "launch",
+            "url": "https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris"
+        }
+    ]
+}
