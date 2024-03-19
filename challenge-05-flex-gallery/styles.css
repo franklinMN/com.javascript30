@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    /* ... Fonts ... */
+    --primary-font : "Jockey One";
+    --primary-font-size: 30px;
+    --primary-font-weight: 400;
+    --primary-font-color: white;
+}
+
+html{
+    font-family: var(--primary-font), sans-serif;
+    color: var(--primary-font-color);
+    font-size: var(--primary-font-size);
+    font-weight: var(--primary-font-weight);
+    font-style: normal;
+
+    text-shadow: 2px 2px 10px black;
+}
+
+.gallery-container{
+    width: 100%;
+    height: 100vh;
+    background-color: yellow;
+    display: flex;
+    overflow: hidden;
+    
+}
+
+.image-panel{
+    text-align: center;
+    flex: 1;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+
+    transition: transform 1s, flex 1s, font-size 1s;
+    background-position: center;
+}
+
+.image-panel > * {
+    /* border: 1px solid white; */
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+}
+
+
+.panel1{
+    background-image: url(images/Fire.jpg);
+}
+.panel2{
+    background-image: url(images/water.jpg);
+}
+.panel3{
+    background-image: url(images/air.jpg);
+}
+.panel4{
+    background-image: url(images/land.jpg);
+}
+.panel5{
+    background-image: url(images/aether.jpg);
+    
+}
+
+.panel-grow{
+    flex: 4;
+    font-size: 50px;
+}
+
+.image-panel > :first-child { transform: translateY(-100%); }
+.image-panel > :last-child { transform: translateY(100%); }
+
+.image-panel.open > :first-child { transform: translateY(0); }
+.image-panel.open > :last-child { transform: translateY(0); }
+
+/* .open {
+    transform: translateY(0) ;
+    
+} */
+
+.top-shadow{
+    background-image: linear-gradient( 180deg, rgba(0,0,255,0.5), rgba(0,0,0, 0)  );
+    
+}
+
+.bottom-shadow{
+    background-image: linear-gradient( 0deg, rgba(255,0,0,0.5), rgba(0,0,0, 0)  );
+    
+}
+
+@media only screen and (max-width: 768px) {
+    /* Styles for screens up to 768px wide (typical mobile devices) */
+    .gallery-container {
+      /* Adjust styles for smaller screens */
+      flex-direction: column; /* Stack panels vertically */
+    }
+    
+    .image-panel {
+      /* Adjust styles for smaller screens */
+        flex-direction: row;
+    }
+
+    .image-panel > * {
+        /* border: 1px solid white; */
+        height: 100%;
+        /* flex-direction: column-reverse; */
+
+    }
+
+    .image-panel > :first-child { transform: translateX(-100%); }
+    .image-panel > :last-child { transform: translateX(100%); }
+
+    .image-panel.open > :first-child { transform: translateX(0); }
+    .image-panel.open > :last-child { transform: translateX(0); }
+
+    .top-shadow{
+        background-image: linear-gradient( 90deg, rgba(0,0,255,0.5), rgba(0,0,0, 0)  );
+        
+    }
+    
+    .bottom-shadow{
+        background-image: linear-gradient( 270deg, rgba(255,0,0,0.5), rgba(0,0,0, 0)  );
+        
+    }
+
+    .panel-grow{
+        flex: 6;
+        font-size: 50px;
+    }
+}
